@@ -1,0 +1,22 @@
+services:
+  open-webui:
+    environment:
+      - WEBUI_NAME=EXODO Nexus
+      - WEBUI_URL=http://localhost:3000
+      - WEBUI_FAVICON_URL=https://openwebui.com/favicon.png
+
+      # Security
+      - WEBUI_AUTH=True
+      - ENABLE_SIGNUP=False
+      - WEBUI_SECRET_KEY=change_me_with_a_long_random_string
+      - WEBUI_AUTH_SIGNOUT_REDIRECT_URL=http://localhost:3001/login
+
+      # Trusted headers from EXODO reverse proxy
+      - WEBUI_AUTH_TRUSTED_EMAIL_HEADER=x-exodo-user-email
+      - WEBUI_AUTH_TRUSTED_NAME_HEADER=x-exodo-user-name
+      - WEBUI_AUTH_TRUSTED_GROUPS_HEADER=x-exodo-org-id
+      - WEBUI_AUTH_TRUSTED_ROLE_HEADER=x-exodo-user-role
+
+      # LLM provider (set in your .env or shell)
+      - OPENAI_API_BASE_URL=${OPENAI_API_BASE_URL}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
