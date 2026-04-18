@@ -2,7 +2,7 @@ services:
   open-webui:
     environment:
       - WEBUI_NAME=EXODO Nexus
-      - WEBUI_URL=http://localhost:3000
+      - WEBUI_URL=http://localhost:9988
       - WEBUI_FAVICON_URL=https://openwebui.com/favicon.png
 
       # Security

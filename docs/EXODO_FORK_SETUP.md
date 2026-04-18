@@ -22,7 +22,7 @@ From repository root:
 3. Run with EXODO override:
    - `docker compose -f docker-compose.yaml -f docker-compose.exodo.yaml up -d --build`
 4. Open:
-   - `http://localhost:3000`
+   - `http://localhost:9988`
 
 ## 3) EXODO SSO Integration (Trusted Headers)
 
