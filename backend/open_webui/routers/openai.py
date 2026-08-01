@@ -148,12 +148,17 @@ async def get_headers_and_cookies(
     user: UserModel = None,
 ):
     cookies = {}
+
+    openrouter_title = 'Open WebUI'
+    if request is not None and hasattr(request, 'app') and hasattr(request.app, 'state'):
+        openrouter_title = getattr(request.app.state, 'WEBUI_NAME', openrouter_title)
+
     headers = {
         'Content-Type': 'application/json',
         **(
             {
                 'HTTP-Referer': 'https://openwebui.com/',
-                'X-Title': 'Open WebUI',
+                'X-Title': openrouter_title,
             }
             if 'openrouter.ai' in url
             else {}
